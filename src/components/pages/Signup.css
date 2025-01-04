@@ -1,0 +1,48 @@
+.signup {
+    padding: 20px;
+}
+
+.signup-hero {
+    background-color: #3498db;
+    text-align: center;
+    padding: 40px;
+    color: white;
+}
+
+.signup-form {
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .signup-hero h1 {
+        font-size: 24px;
+    }
+
+    .signup-form {
+        width: 90%;
+    }
+}
