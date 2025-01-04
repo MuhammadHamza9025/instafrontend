@@ -41,7 +41,7 @@ function App() {
       <p> AoA brother !</p>
 
       <h2>If you want to do more projects in future with me then contact me on</h2>
-      <i>+9-2-3-1-8-5-8-11230</i>
+      <i className='text-4xl'>+9-2-3-1-8-5-8-11230</i>
       <br />
       message me on this number brother please
 
